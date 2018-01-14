@@ -1,0 +1,36 @@
+{
+  "customers": [
+    {
+      "dni": "27000000",
+      "name": "Juan Perez.",
+      "age": 37
+    },
+    {
+      "dni": "30000001",
+      "name": "Otro mas",
+      "age": 35
+    },
+    {
+      "dni": "33000000",
+      "name": "Luis Martinez",
+      "age": 32
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
