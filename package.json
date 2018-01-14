@@ -11,6 +11,7 @@
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "redux-actions": "^2.2.1",
+    "redux-form": "^7.2.0",
     "redux-promise": "^0.5.3",
     "reselect": "^3.0.1"
   },
