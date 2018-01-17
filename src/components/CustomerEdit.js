@@ -8,9 +8,13 @@ const isRequired = value => (
     !value && "Este campo es requerido"
 );
 
-const MyField = ({input, meta}) => (
+const isNumber = value => (
+    isNaN(Number(value)) && "El campo debe ser un número"
+);
+
+const MyField = ({input, meta, type}) => (
     <div>
-        <input {...input} type="text"/>
+        <input {...input} type={!type ? "text" : type} />
         {
             meta.touched && meta.error && <span>{meta.error}</span>
         }
@@ -34,11 +38,14 @@ const CustomerEdit = ( { name, dni, age}) => {
                     <Field 
                         name="dni" 
                         component={MyField} 
-                        validate={isRequired}></Field>
+                        validate={[isRequired, isNumber]}></Field>
                 </div>
                 <div>
                     <label htmlFor="age">Edad</label>
-                    <Field name="age" component="input" type="number"></Field>
+                    <Field name="age" 
+                        component={MyField} 
+                        type="number"
+                        validate={isNumber} ></Field>
                 </div>
             </form>
         </div>
