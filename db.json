@@ -2,14 +2,14 @@
   "customers": [
     {
       "id": "27000000",
-      "dni": "27000000",
-      "name": "Carlos Perez",
+      "dni": "500000",
+      "name": "Carlos Sanches",
       "age": 37
     },
     {
       "id": "30000001",
       "dni": "30000001",
-      "name": "Cliente nuevo",
+      "name": "Facundo",
       "age": 35
     },
     {
@@ -17,6 +17,12 @@
       "dni": "33000000",
       "name": "Luis Martinez",
       "age": 32
+    },
+    {
+      "dni": "6868686",
+      "name": "Nuevo cliente",
+      "age": 10,
+      "id": "XSCfaW5"
     }
   ],
   "posts": [
