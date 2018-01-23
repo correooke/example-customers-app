@@ -12,6 +12,7 @@ class CustomersContainer extends Component {
 
     componentDidMount() {
         this.props.fetchCustomers();
+        debugger;
     }
     
     handleAddNew = () => {
