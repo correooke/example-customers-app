@@ -4,6 +4,7 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import { setPropsAsInitial } from './../helpers/setPropsAsInitial';
 import CustomersActions from './CustomersActions';
+import { Prompt } from 'react-router-dom';
 
 /*
 const isRequired = value => (
@@ -45,7 +46,8 @@ const toLower = value => value && value.toLowerCase();
 const onlyGrow = (value, previousValue, values) => 
     value && previousValue && (value > previousValue ? value : previousValue);
 
-const CustomerEdit = ( { name, dni, age, handleSubmit, submitting, onBack }) => {
+const CustomerEdit = ( { 
+        name, dni, age, handleSubmit, submitting, onBack, pristine, submitSucceeded }) => {
     return (
         <div>
             <h2>Edición del cliente</h2>
@@ -71,6 +73,9 @@ const CustomerEdit = ( { name, dni, age, handleSubmit, submitting, onBack }) => 
                     <button type="submit" disabled={submitting}>Aceptar</button>
                     <button onClick={onBack}>Cancelar</button>
                 </CustomersActions>
+                <Prompt
+                    when={!pristine && !submitSucceeded}
+                    message="Se perderán los datos si continúa"></Prompt>
             </form>
         </div>
     );
