@@ -24,15 +24,7 @@ const validate = values => {
     return error;
 };
 
-const MyField = ({input, meta, type, label, name}) => (
-    <div>
-        <label htmlFor={name}>{label}</label>
-        <input {...input} type={!type ? "text" : type} />
-        {
-            meta.touched && meta.error && <span>{meta.error}</span>
-        }
-    </div>
-);
+
 
 const toNumber = value => value && Number(value);
 const toUpper = value => value && value.toUpperCase();
@@ -42,31 +34,37 @@ const onlyGrow = (value, previousValue, values) =>
 
 class CustomerEdit extends Component {
 
-    componentDidMount() {
-          if (this.cuadrodetexto) {
-              this.cuadrodetexto.focus();
-          }  
-    }
+    renderField = ({input, meta, type, label, name, withFocus}) => (
+        <div>
+            <label htmlFor={name}>{label}</label>
+            <input {...input} 
+                    type={!type ? "text" : type}
+                    ref={withFocus && (txt => txt && txt.focus()) } />
+            {
+                meta.touched && meta.error && <span>{meta.error}</span>
+            }
+        </div>
+    );    
 
     render() {
         const { handleSubmit, submitting, onBack, pristine, submitSucceeded } = this.props;
         return (
             <div>
                 <h2>Edición del cliente</h2>
-                Nuevo cuadro de texto: <input ref={txt => this.cuadrodetexto = txt} type="text"/>
                 <form onSubmit={handleSubmit}>
                     <Field 
+                        withFocus
                         name="name" 
-                        component={MyField} 
+                        component={this.renderField} 
                         label="Nombre"
                         parse={toUpper}
                         format={toLower} ></Field>
                     <Field 
                         name="dni" 
-                        component={MyField} 
+                        component={this.renderField} 
                         label="Dni"></Field>
                     <Field name="age" 
-                        component={MyField} 
+                        component={this.renderField} 
                         type="number"
                         validate={isNumber}
                         label="Edad"
