@@ -7,12 +7,6 @@
       "age": 40
     },
     {
-      "id": "30000001",
-      "dni": "30000001",
-      "name": "FACUNDO 2",
-      "age": 35
-    },
-    {
       "dni": "6868686",
       "name": "Nuevo cliente",
       "age": 10,
@@ -23,18 +17,6 @@
       "dni": "99999",
       "age": 11,
       "id": "kxmVQVd"
-    },
-    {
-      "name": "NUEVO 33",
-      "dni": "10000",
-      "age": 5,
-      "id": "CGlw0LI"
-    },
-    {
-      "name": "NUEVO 4",
-      "dni": "889880980",
-      "age": 4,
-      "id": "AuCjfPb"
     }
   ],
   "posts": [

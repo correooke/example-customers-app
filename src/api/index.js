@@ -36,5 +36,5 @@ export const apiDelete = (url, id) => () =>
         if (r.error) {
             return Promise.reject(r.validation);
         }
-        return r;
+        return id;
     });    
