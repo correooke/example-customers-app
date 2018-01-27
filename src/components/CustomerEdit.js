@@ -34,12 +34,19 @@ const onlyGrow = (value, previousValue, values) =>
 
 class CustomerEdit extends Component {
 
+    componentDidMount() {
+        if (this.txt) {
+            this.txt.focus();
+        }
+
+    }
+
     renderField = ({input, meta, type, label, name, withFocus}) => (
         <div>
             <label htmlFor={name}>{label}</label>
             <input {...input} 
                     type={!type ? "text" : type}
-                    ref={withFocus && (txt => txt && txt.focus()) } />
+                    ref={withFocus && (txt => { this.txt = txt;} ) } />
             {
                 meta.touched && meta.error && <span>{meta.error}</span>
             }
