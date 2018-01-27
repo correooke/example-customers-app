@@ -26,3 +26,15 @@ export const apiPost = (url, obj) => () =>
         }
         return r;
     });
+
+export const apiDelete = (url, id) => () => 
+    fetch(`${url}/${id}`, {
+        method: 'DELETE',
+        headers: new Headers({ 'Content-type': 'application/json'})
+    }).then(v => v.json())
+    .then(r => {
+        if (r.error) {
+            return Promise.reject(r.validation);
+        }
+        return r;
+    });    
