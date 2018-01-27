@@ -36,13 +36,19 @@ class CustomerContainer extends Component {
         this.props.history.goBack();
     }
 
+    handleOnDelete = () => {
+        console.log("handleOnDelete");
+    }
+
     renderCustomerControl = (isEdit, isDelete) => {
         if (this.props.customer) {
             const CustomerControl = isEdit ? CustomerEdit : CustomerData;
             return <CustomerControl {...this.props.customer} 
                         onSubmit={this.handleSubmit}
                         onSubmitSuccess={this.handleOnSubmitSuccess}
-                        onBack={this.handleOnBack} />
+                        onBack={this.handleOnBack}
+                        isDeleteAllow={!!isDelete}
+                        onDelete={this.handleOnDelete} />
         }
 
         return null;        
