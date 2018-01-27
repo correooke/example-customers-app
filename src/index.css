@@ -6,17 +6,22 @@ body {
 
 
 .app-frame {
-  margin: 5%;
+  margin: 0;
   padding: 30px;
-  width: calc(80vw);
-  
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#666), to(#EEE));
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  background: #00cbcc;
 }
 
 .customers-actions {
-  background: #AAA;
+  margin: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  background: rgba(0,0,0,0.2);
   padding: 10px;
-  margin: 10px;
+  width: calc(100% - 80px);
 }
 
 .customers-actions button {
@@ -24,14 +29,138 @@ body {
   min-width: 100px;
   height: 30px;
   margin: 5px;
+  border-style: none;
+  border-radius: 3px;
+  font-weight: bolder;
 }
 
+.customers-actions button:hover {
+  background: #F0F0F0;
+  border-style: solid;
+}
+
+.customers-list .customers-list-item {
+  width: 100%;
+  background: #FFF; 
+  transition: 500ms;
+  height: 40px;
+}
+
+.customers-list .customers-list-item:nth-child(even) {
+  background: #EEE;  
+}
+
+.customers-list .customers-list-item:hover {
+  background: #84adad3a;
+  border: 1px solid;
+} 
 
 .customers-list-item .field {
   width: 160px;
   margin: 1px;
   padding: 4px;
-  background: #EEE;
+  overflow: hidden;
   display: inline-block;
+  line-height: 40px;
 }
+.customers-list-item .field:first-child {
+  width: 70%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.customers-list-item .field {
+  width: 15%;
+  margin: 0;
+  box-sizing: border-box;  
+}
+
+
+.customers-list-item .field:first-child > a {
+  color: #222;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.customers-list-item .field a {
+  color: #666;
+  text-decoration: none;
+  
+}
+
+.app-frame p {
+  color: white;
+  font-size: 10px;
+  font-style: italic;
+}
+
+.app-frame form {
+  width: 100%;
+  background: rgba(255,255,255,0.5);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.app-frame form label {
+  width: 100%;
+  display: inline-block;
+  margin-top: 10px;
+  color: rgba(0,0,0,0.7);
+  font-size: 12px;
+}
+
+.app-frame form input {
+  font-size: 18px;
+  font-style: bolder;
+}
+
+.app-frame form span {
+  color: red;
+  margin: 5px;
+  font-size: 10px;
+  font-style: italic;
+}
+
+
+.app-header {
+  border: 0;
+  border-bottom: 1px;
+  border-style: solid;
+  border-color: white;
+}
+
+.app-header h1 {
+  color: white;
+}
+
+.app-frame h2 {
+  font-weight: lighter;
+  font-size: 1.3em;
+}
+
+img {
+  border-radius: 4px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow: hidden;
+  height: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.customer-data strong {
+  width: 100%;
+  display: inline-block;
+  margin-top: 10px;
+  color: #333;
+  font-size: 11px;
+}
+
+.customer-data strong {
+  font-size: 20px;
+}
+
+
+
 
