@@ -26,7 +26,14 @@ class NewCustomerContainer extends Component {
     }
 
     renderBody = () => {
-        return <CustomerEdit onSubmit={this.handleSubmit}
+        const newCustomer = {
+            "id": "",
+            "dni": "",
+            "name": "-",
+            "age": 0
+          };
+          debugger;
+        return <CustomerEdit {...newCustomer} onSubmit={this.handleSubmit}
                     onSubmitSuccess={this.handleOnSubmitSuccess}
                     onBack={this.handleOnBack} />
     }
